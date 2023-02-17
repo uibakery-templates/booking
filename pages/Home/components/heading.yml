@@ -1,0 +1,16 @@
+id: '16373243540630.47216878207176394'
+definitionId: heading
+parentSlotId: '2'
+styles:
+  xl: {}
+properties:
+  name: heading
+  gridItem:
+    x: 0
+    y: 0
+    w: 10
+    h: 2
+  text: Booking Backoffice
+actions: {}
+index: 3
+slots: []

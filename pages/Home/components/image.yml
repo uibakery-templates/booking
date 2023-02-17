@@ -1,0 +1,22 @@
+id: '16373227620350.638378670777902'
+definitionId: image
+parentSlotId: '2'
+styles:
+  xl:
+    src:
+      url: '{{ state.selectedAppartment.image }}'
+      uploadUrl: ''
+      name: ''
+      active: url
+properties:
+  name: image
+  gridItem:
+    x: 10
+    y: 2
+    w: 14
+    h: 26
+    minH: 2
+actions:
+  init: []
+index: 2
+slots: []

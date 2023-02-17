@@ -1,0 +1,9 @@
+storeItemList:
+  - id: '16373231677670.5036328199004867'
+    name: selectedAppartment
+    value: {}
+    valueType: object
+    initialValue: {}
+metadata:
+  code: ''
+  title: '[MOCK DB] Booking'

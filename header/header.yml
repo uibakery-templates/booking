@@ -1,0 +1,40 @@
+id: headerParent
+name: content
+children:
+  - id: header
+    definitionId: header
+    parentSlotId: headerParent
+    index: 0
+    styles:
+      xl:
+        size:
+          heightValue: '80'
+          heightUnit: px
+        visible: true
+        spacing:
+          paddings:
+            paddingTop: 16
+            paddingRight: 16
+            paddingBottom: 16
+            paddingLeft: 16
+            paddingTopUnit: px
+            paddingRightUnit: px
+            paddingBottomUnit: px
+            paddingLeftUnit: px
+        backgroundColor:
+          value: default
+          dataValue: default
+          withData: false
+      lg: {}
+      md: {}
+      sm: {}
+      xs: {}
+    properties:
+      fixed: false
+      name: Header
+    slots:
+      - id: '3'
+        name: content
+        bindings: {}
+        children:
+          - components/Space2/Space2.yml

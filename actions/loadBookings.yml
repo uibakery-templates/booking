@@ -1,0 +1,39 @@
+id: '16373245688340.4979181156963426'
+name: loadBookings
+nameConfigured: true
+steps:
+  - id: '16373245810510.12912955665900716'
+    type: customSQLQuery
+    params:
+      - type: datasourceId
+        value: upYkXTEnii
+        valueType: custom
+      - type: query
+        value: >-
+          SELECT bookings.*, users.* FROM bookings JOIN users ON
+          bookings.user_id = users.id WHERE bookings.apartment_id = {{
+          state.selectedAppartment.id }};
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+type:
+  returnType: []
+  returnValueTypeSnapshot: array
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.loadBookings.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.loadBookings.name}}" successfully executed
+  showErrorToast: false
+  errorToast: Action "{{actions.loadBookings.name}}" has failed
+  delay: '0'
+  runWhenFirstReferenced: true
+index: 3

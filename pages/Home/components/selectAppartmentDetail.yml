@@ -1,0 +1,133 @@
+id: '16373227513420.7809970135074522'
+definitionId: detail
+parentSlotId: '2'
+styles:
+  xl: {}
+properties:
+  name: selectAppartmentDetail
+  gridItem:
+    x: 10
+    y: 28
+    w: 14
+    h: 14
+    minH: 2
+    minW: 4
+  title: Select Appartment
+  columns: '4'
+  entity: '{{ state.selectedAppartment }}'
+actions: {}
+index: 1
+slots:
+  - id: '16373227513420.9238493425378338'
+    name: structure
+    children:
+      - id: '16373228843690.8219111980601341'
+        definitionId: atomicString
+        parentSlotId: '16373227513420.9238493425378338'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString
+          prop: name
+          primaryKey: false
+        index: 0
+        slots: []
+      - id: '16373228843690.8711320537924765'
+        definitionId: atomicString
+        parentSlotId: '16373227513420.9238493425378338'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString2
+          prop: country
+          primaryKey: false
+        index: 1
+        slots: []
+      - id: '16373228843690.28947922993227637'
+        definitionId: atomicString
+        parentSlotId: '16373227513420.9238493425378338'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString3
+          prop: city
+          primaryKey: false
+        index: 2
+        slots: []
+      - id: '16373228843690.20553644072707944'
+        definitionId: atomicNumber
+        parentSlotId: '16373227513420.9238493425378338'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicNumber2
+          prop: zip_code
+          primaryKey: false
+        index: 3
+        slots: []
+      - id: '16373228843690.39786185108687033'
+        definitionId: atomicString
+        parentSlotId: '16373227513420.9238493425378338'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString4
+          prop: address
+          primaryKey: false
+        index: 4
+        slots: []
+      - id: '16373228843690.6587475509873728'
+        definitionId: atomicDateTime
+        parentSlotId: '16373227513420.9238493425378338'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime
+          prop: address2
+          primaryKey: false
+          timeFormat:
+            active: false
+        index: 5
+        slots: []
+      - id: '16373228843690.7189405748383892'
+        definitionId: atomicString
+        parentSlotId: '16373227513420.9238493425378338'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString5
+          prop: direction
+          primaryKey: false
+        index: 6
+        slots: []
+      - id: '16373228843690.6851563235721894'
+        definitionId: atomicNumber
+        parentSlotId: '16373227513420.9238493425378338'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicNumber5
+          prop: booked
+          primaryKey: false
+        index: 7
+        slots: []
+      - id: '16373228843690.14710738638454068'
+        definitionId: atomicString
+        parentSlotId: '16373227513420.9238493425378338'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString6
+          prop: text
+          primaryKey: false
+        index: 8
+        slots: []

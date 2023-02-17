@@ -1,0 +1,27 @@
+id: '1'
+name: Home
+url: home
+index: 0
+slots:
+  - id: '1'
+    name: content
+    bindings: {}
+    children:
+      - id: '1'
+        definitionId: grid
+        parentSlotId: '1'
+        index: 0
+        styles: {}
+        properties:
+          name: grid
+        actions: {}
+        slots:
+          - id: '2'
+            name: content
+            bindings: {}
+            children:
+              - components/map.yml
+              - components/selectAppartmentDetail.yml
+              - components/image.yml
+              - components/heading.yml
+              - components/loadBookingsTable.yml

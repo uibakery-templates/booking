@@ -1,0 +1,46 @@
+id: '16373232387810.7469491446313601'
+name: selectAppartmentFromMap
+nameConfigured: true
+steps:
+  - id: '16373232567570.1872926651590272'
+    type: customAsyncCode
+    params:
+      - type: asyncCode
+        value: return {{ actions.selectAppartment.trigger(data.data) }};
+        valueType: interpolatedValue
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '16373303875240.5760185901206452'
+    type: executeAction
+    params:
+      - type: action
+        value: '16373245688340.4979181156963426'
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+type:
+  returnType: []
+  returnValueTypeSnapshot: array
+assigned: true
+selected: true
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.selectAppartmentFromMap.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.selectAppartmentFromMap.name}}" successfully executed
+  showErrorToast: false
+  errorToast: Action "{{actions.selectAppartmentFromMap.name}}" has failed
+  delay: '0'
+  runWhenFirstReferenced: true
+index: 2

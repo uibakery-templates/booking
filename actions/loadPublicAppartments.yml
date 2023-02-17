@@ -1,0 +1,121 @@
+id: '16373221973210.09871632788064288'
+name: loadPublicAppartments
+nameConfigured: true
+steps:
+  - id: '16373221987810.5262882627472691'
+    type: LOAD_COLLECTION
+    params:
+      - type: datasourceId
+        value: upYkXTEnii
+        valueType: string
+      - type: resourceId
+        value: 5e61b2b9-0e5a-4e78-93b2-649ba9a4b7f8
+        valueType: string
+      - type: filters
+        value: []
+        valueType: custom
+      - type: ordering
+        value:
+          limit:
+            value: ''
+          offset:
+            value: ''
+          orderBy:
+            value: ''
+          orderDirection:
+            value: asc
+        valueType: custom
+      - type: additionalParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '16373232772480.8904307297701004'
+    type: customAsyncCode
+    params:
+      - type: asyncCode
+        value: |-
+          await {{ actions.selectAppartment.trigger(data[0]) }};
+          return data;
+        valueType: interpolatedValue
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+type:
+  returnType:
+    - name: id
+      type: number
+      humanizedName: Id
+      primaryKey: false
+    - name: name
+      type: string
+      humanizedName: Name
+      primaryKey: false
+    - name: image
+      type: string
+      humanizedName: Image
+      primaryKey: false
+    - name: country
+      type: string
+      humanizedName: Country
+      primaryKey: false
+    - name: city
+      type: string
+      humanizedName: City
+      primaryKey: false
+    - name: zip_code
+      type: string
+      humanizedName: Zip code
+      primaryKey: false
+    - name: address
+      type: string
+      humanizedName: Address
+      primaryKey: false
+    - name: address2
+      type: string
+      humanizedName: Address2
+      primaryKey: false
+    - name: latitude
+      type: number
+      humanizedName: Latitude
+      primaryKey: false
+    - name: longitude
+      type: number
+      humanizedName: Longitude
+      primaryKey: false
+    - name: direction
+      type: string
+      humanizedName: Direction
+      primaryKey: false
+    - name: booked
+      type: number
+      humanizedName: Booked
+      primaryKey: false
+  returnTypeName: Appartments
+  returnStepType: LOAD_COLLECTION
+  returnValueTypeSnapshot: object
+assigned: false
+selected: true
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.loadPublicAppartments.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.loadPublicAppartments.name}}" successfully executed
+  showErrorToast: false
+  errorToast: Action "{{actions.loadPublicAppartments.name}}" has failed
+  delay: '0'
+  runWhenFirstReferenced: true
+mode: manual
+index: 0
