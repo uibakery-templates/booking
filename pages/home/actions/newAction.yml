@@ -1,0 +1,62 @@
+id: '16938442092900.8138862316714786'
+name: newAction
+nameConfigured: false
+steps:
+  - id: '16938442172490.23917939312692638'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: "Delete from appartments where id NOT IN (\n\tSelect apartment_id from bookings GROUP by apartment_id\n)"
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: upYkXTEnii
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: "Delete from appartments where id NOT IN (\n\tSelect apartment_id from bookings GROUP by apartment_id\n)"
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.newAction.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.newAction.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.newAction.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: false
+index: 4

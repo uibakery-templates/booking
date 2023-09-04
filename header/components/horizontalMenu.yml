@@ -1,0 +1,40 @@
+id: '16938460393630.6364274341018032'
+definitionId: horizontalMenu
+parentSlotId: '16938459483500.5101221184665792'
+styles:
+  xl:
+    gridItem:
+      x: 1
+      y: 0
+      w: 12
+      h: 10
+    color:
+      value: white
+      dataValue: basic
+      withData: false
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 10
+properties:
+  autoSyncItems: false
+  name: horizontalMenu
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  items: |-
+    [
+      {
+        title: 'Bookings',
+        link: '/home'
+      },
+      {
+        title: 'Planner',
+        link: '/home1'
+      }
+    ]
+actions: {}
+index: 0
+slots: []

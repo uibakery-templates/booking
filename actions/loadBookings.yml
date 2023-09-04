@@ -5,28 +5,51 @@ steps:
   - id: '16373245810510.12912955665900716'
     type: customSQLQuery
     params:
+      - type: query
+        value: "SELECT bookings.*, users.* FROM bookings \n\tJOIN users ON bookings.user_id = users.id \n\tWHERE bookings.apartment_id = {{ state.selectedApartment.id }};"
+        valueType: interpolatedValue
+        interpolationType: string
       - type: datasourceId
         value: upYkXTEnii
         valueType: custom
-      - type: query
-        value: >-
-          SELECT bookings.*, users.* FROM bookings JOIN users ON
-          bookings.user_id = users.id WHERE bookings.apartment_id = {{
-          state.selectedAppartment.id }};
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: "SELECT bookings.*, users.* FROM bookings \n\tJOIN users ON bookings.user_id = users.id \n\tWHERE bookings.apartment_id = ?;"
         valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__( state.selectedApartment.id )
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
       - type: successMapper
         value: ''
         valueType: interpolatedValue
       - type: failureMapper
         value: ''
         valueType: interpolatedValue
+      - type: mapperEnabled
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '16938344148870.500575466563439'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: "const avatars = [\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-00.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-01.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-02.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-03.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-04.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-05.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-06.png\"\n];\n\nreturn {{data}}.map(b => ({\n\t...b,\n  avatar: avatars[Math.floor(Math.random() * avatars.length)],\n}));"
+        valueType: interpolatedValue
+        interpolationType: code
     level: 0
     fallthroughError: false
     isChanged: true
 singleStep: true
-type:
-  returnType: []
-  returnValueTypeSnapshot: array
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.loadBookings.name}}"?
@@ -36,4 +59,6 @@ config:
   errorToast: Action "{{actions.loadBookings.name}}" has failed
   delay: '0'
   runWhenFirstReferenced: true
-index: 3
+mode: manual
+assigned: true
+index: 1

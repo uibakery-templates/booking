@@ -1,0 +1,87 @@
+id: '16373221973210.09871632788064288'
+name: loadApartments
+nameConfigured: true
+steps:
+  - id: '16938398349780.9020409261375957'
+    type: customSQLQuery
+    params:
+      - type: query
+        value: |-
+          SELECT DISTINCT a.* 
+          FROM appartments a
+          JOIN bookings b ON a.id = b.apartment_id
+          LIMIT 25
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: upYkXTEnii
+        valueType: string
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: |-
+          SELECT DISTINCT a.* 
+          FROM appartments a
+          JOIN bookings b ON a.id = b.apartment_id
+          LIMIT 25
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    name: query
+  - id: '16938465098570.8964685453486188'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: >-
+          return {{data}}.filter((a) => a.address.includes({{ui.input.value}})
+          || a.address2.includes({{ui.input.value}}) ||
+          a.name.includes({{ui.input.value}}));
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '16373232772480.8904307297701004'
+    type: customAsyncCode
+    params:
+      - type: asyncCode
+        value: "const imagePath = 'https://sauibakeryprod.blob.core.windows.net/mock-database-assets';\nconst newData = {{data}}.map((a, i) => ({\n\t...a,\n  image: `${imagePath}/apartment_${i % 18 + 1}.jpg`\n}));\n\n{{actions.selectApartment.trigger(newData[0])}}\n\nreturn newData;\n"
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+assigned: true
+selected: true
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.loadApartments.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.loadApartments.name}}" successfully executed
+  showErrorToast: false
+  errorToast: Action "{{actions.loadApartments.name}}" has failed
+  delay: '0'
+  runWhenFirstReferenced: true
+mode: manual
+configured: true
+index: 0
