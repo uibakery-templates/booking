@@ -1,0 +1,26 @@
+id: '16938342527290.9478199324318977'
+definitionId: image
+styles:
+  xl:
+    src:
+      url: '{{item.image}}'
+      uploadUrl: ''
+      name: ''
+      active: url
+    radius:
+      customValue: 8
+      customUnit: px
+    gridItem:
+      x: 0
+      y: 0
+      w: 4
+      h: 20
+properties:
+  name: image
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '16938342527290.7042401988392435'
+index: 0
+actions: {}
+slots: []

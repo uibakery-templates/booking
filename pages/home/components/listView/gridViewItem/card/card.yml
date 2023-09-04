@@ -1,0 +1,50 @@
+id: '16938342527290.06844255766517726'
+definitionId: card
+styles:
+  xl:
+    backgroundColor:
+      value: default
+      dataValue: '{{item.id === state.selectedApartment.id ? ''#E8EEFB'' : ''default''}}'
+      withData: true
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 26
+properties:
+  name: card
+  showHeader: false
+  gridItem:
+    w: 24
+    h: 24
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  cssClasses:
+    - apartment
+parentSlotId: '16938342527290.5347188200623112'
+index: 0
+actions:
+  cardClick:
+    - action: '16938466024680.3732550911328365'
+      paramCode: '{{item}}'
+      blockPageLoad: false
+      index: 0
+  init: []
+slots:
+  - id: '16938342527290.6419700945993423'
+    name: header
+    children:
+      - heading2.yml
+  - id: '16938342527290.7042401988392435'
+    name: body
+    children:
+      - image.yml
+      - heading3.yml
+      - boolean.yml
+      - text.yml
+      - text2.yml
+      - text3.yml
+  - id: '16938342527290.33562652996861475'
+    name: footer
+    children: []

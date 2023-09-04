@@ -1,0 +1,31 @@
+id: '16938342527290.3301152286654023'
+definitionId: heading
+styles:
+  xl:
+    fontSize:
+      customValue: 15
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
+    gridItem:
+      x: 5
+      y: 0
+      w: 15
+      h: 7
+    color:
+      value: basic
+      dataValue: basic
+      withData: true
+properties:
+  name: heading3
+  text: '{{item.name}}'
+  verticalAlignment: bottom
+  alignment: left
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  cssClasses:
+    - ellipsis
+parentSlotId: '16938342527290.7042401988392435'
+index: 1
+actions: {}
+slots: []

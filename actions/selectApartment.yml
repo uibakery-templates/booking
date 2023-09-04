@@ -1,0 +1,61 @@
+id: '16373232387810.7469491446313601'
+name: selectApartment
+nameConfigured: true
+steps:
+  - id: '16938338010610.44167640005630515'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '16373231677670.5036328199004867'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '16373303875240.5760185901206452'
+    type: executeAction
+    params:
+      - type: action
+        value: '16373245688340.4979181156963426'
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: true
+        valueType: custom
+      - type: customParamsEnabled
+        value: false
+        valueType: custom
+      - type: customParams
+        value: '{{data}}'
+        valueType: interpolatedValue
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+assigned: false
+selected: true
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.selectApartment.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.selectApartment.name}}" successfully executed
+  showErrorToast: false
+  errorToast: Action "{{actions.selectApartment.name}}" has failed
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+configured: true
+mode: manual
+index: 3

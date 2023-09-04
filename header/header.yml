@@ -1,40 +1,25 @@
-id: headerParent
+id: '16938459483460.15741637309710255'
 name: content
 children:
-  - id: header
-    definitionId: header
-    parentSlotId: headerParent
-    index: 0
+  - id: '16938459483500.08058485317869724'
+    definitionId: layoutHeader
+    parentSlotId: '16938459483460.15741637309710255'
     styles:
       xl:
-        size:
-          heightValue: '80'
-          heightUnit: px
-        visible: true
-        spacing:
-          paddings:
-            paddingTop: 16
-            paddingRight: 16
-            paddingBottom: 16
-            paddingLeft: 16
-            paddingTopUnit: px
-            paddingRightUnit: px
-            paddingBottomUnit: px
-            paddingLeftUnit: px
         backgroundColor:
           value: default
-          dataValue: default
-          withData: false
-      lg: {}
-      md: {}
-      sm: {}
-      xs: {}
+          dataValue: '#061B5A'
+          withData: true
     properties:
-      fixed: false
-      name: Header
+      name: layoutHeader
+      __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+        - xl
+        - xs
+    index: 0
     slots:
-      - id: '3'
+      - id: '16938459483500.5101221184665792'
         name: content
-        bindings: {}
         children:
-          - components/Space2/Space2.yml
+          - components/horizontalMenu.yml
+          - components/image2.yml
+          - components/contextMenuButton.yml
