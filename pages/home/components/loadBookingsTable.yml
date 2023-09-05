@@ -247,23 +247,6 @@ slots:
           filter: true
         index: 14
         slots: []
-      - id: '16938330277770.1745699162623917'
-        definitionId: atomicLink
-        parentSlotId: '16373303656220.4088533258288569'
-        styles:
-          xl:
-            visible: false
-        properties:
-          name: atomicLink2
-          prop: image
-          primaryKey: false
-          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
-            - xl
-            - xs
-          width: 120
-          filter: true
-        index: 15
-        slots: []
       - id: '16938330277770.43201260703549504'
         definitionId: atomicString
         parentSlotId: '16373303656220.4088533258288569'
@@ -279,7 +262,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 16
+        index: 15
         slots: []
       - id: '16938330277770.7265620212259243'
         definitionId: atomicString
@@ -296,7 +279,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 17
+        index: 16
         slots: []
       - id: '16938330277770.09609863906751404'
         definitionId: atomicNumber
@@ -313,7 +296,7 @@ slots:
             - xs
           width: 60
           filter: true
-        index: 18
+        index: 17
         slots: []
       - id: '16938330277770.2966364030709143'
         definitionId: atomicBoolean
@@ -332,19 +315,6 @@ slots:
           width: 60
         index: 5
         slots: []
-      - id: '16938345757200.21006219289423833'
-        definitionId: atomicImage
-        parentSlotId: '16373303656220.4088533258288569'
-        styles: {}
-        properties:
-          name: atomicImage
-          prop: avatar
-          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
-            - xl
-            - xs
-          width: '50'
-        index: 0
-        slots: []
       - id: '16938330277760.7380158486537702'
         definitionId: atomicString
         parentSlotId: '16373303656220.4088533258288569'
@@ -362,4 +332,20 @@ slots:
           width: 60
           mappedValue: '{{value}} days'
         index: 4
+        slots: []
+      - id: '16938330277770.1745699162623917'
+        definitionId: atomicImage
+        parentSlotId: '16373303656220.4088533258288569'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicImage2
+          prop: image
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          width: '50'
+        index: 0
         slots: []

@@ -38,17 +38,6 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
-  - id: '16938344148870.500575466563439'
-    type: customAsyncCode
-    name: code
-    params:
-      - type: asyncCode
-        value: "const avatars = [\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-00.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-01.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-02.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-03.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-04.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-05.png\",\n\"https://sauibakeryprod.blob.core.windows.net/mock-database-assets/users-avatars/user-06.png\"\n];\n\nreturn {{data}}.map(b => ({\n\t...b,\n  avatar: avatars[Math.floor(Math.random() * avatars.length)],\n}));"
-        valueType: interpolatedValue
-        interpolationType: code
-    level: 0
-    fallthroughError: false
-    isChanged: true
 singleStep: true
 config:
   shouldConfirm: false
