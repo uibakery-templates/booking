@@ -27,6 +27,7 @@ properties:
     value: false
     dataValue: 'false'
     withData: false
+  limit: '3'
 actions: {}
 index: 1
 slots:

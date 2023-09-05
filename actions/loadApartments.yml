@@ -7,10 +7,11 @@ steps:
     params:
       - type: query
         value: |-
-          SELECT DISTINCT a.* 
-          FROM appartments a
-          JOIN bookings b ON a.id = b.apartment_id
-          LIMIT 25
+          SELECT * 
+          FROM appartments 
+          WHERE name LIKE CONCAT('%', '{{ui.input.value}}', '%') 
+          OR address LIKE CONCAT('%', '{{ui.input.value}}', '%') 
+          OR address2 LIKE CONCAT('%', '{{ui.input.value}}', '%')
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
@@ -19,13 +20,17 @@ steps:
         mustSelectFirst: true
       - type: preparedQuery
         value: |-
-          SELECT DISTINCT a.* 
-          FROM appartments a
-          JOIN bookings b ON a.id = b.apartment_id
-          LIMIT 25
+          SELECT * 
+          FROM appartments 
+          WHERE name LIKE CONCAT('%', '?', '%') 
+          OR address LIKE CONCAT('%', '?', '%') 
+          OR address2 LIKE CONCAT('%', '?', '%')
         valueType: interpolatedValue
       - type: preparedQueryParams
-        value: []
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.input.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.input.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.input.value)
         valueType: custom
       - type: customDatabaseName
         value: ''
@@ -46,25 +51,14 @@ steps:
     fallthroughError: false
     isChanged: true
     name: query
-  - id: '16938465098570.8964685453486188'
-    type: customAsyncCode
-    name: code
-    params:
-      - type: asyncCode
-        value: >-
-          return {{data}}.filter((a) => a.address.includes({{ui.input.value}})
-          || a.address2.includes({{ui.input.value}}) ||
-          a.name.includes({{ui.input.value}}));
-        valueType: interpolatedValue
-        interpolationType: code
-    level: 0
-    fallthroughError: false
-    isChanged: true
   - id: '16373232772480.8904307297701004'
     type: customAsyncCode
     params:
       - type: asyncCode
-        value: "const imagePath = 'https://sauibakeryprod.blob.core.windows.net/mock-database-assets';\nconst newData = {{data}}.map((a, i) => ({\n\t...a,\n  image: `${imagePath}/apartment_${i % 18 + 1}.jpg`\n}));\n\n{{actions.selectApartment.trigger(newData[0])}}\n\nreturn newData;\n"
+        value: |
+          {{actions.selectApartment.trigger(data[0])}}
+
+          return {{data}};
         valueType: interpolatedValue
         interpolationType: code
     level: 0
