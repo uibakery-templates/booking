@@ -19,6 +19,30 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+  - id: '16939006782970.8898652809370846'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: >-
+          const apartments = {{actions.loadApartments.data}};
+
+          const index = apartments.findIndex(a => a.id ===
+          state.selectedApartment.id);
+
+
+          const elements = document.getElementsByClassName('apartment');
+
+          elements.item(index).scrollIntoView({ behavior: "smooth", block:
+          "nearest", inline: "nearest" });
+
+
+          return {{data}};
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
   - id: '16373303875240.5760185901206452'
     type: executeAction
     params:
