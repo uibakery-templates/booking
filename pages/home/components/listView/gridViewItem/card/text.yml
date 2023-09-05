@@ -4,9 +4,9 @@ parentSlotId: '16938342527290.7042401988392435'
 styles:
   xl:
     gridItem:
-      x: 21
+      x: 20
       y: 0
-      w: 3
+      w: 4
       h: 6
   xs:
     gridItem:

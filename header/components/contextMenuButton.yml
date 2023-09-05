@@ -20,11 +20,11 @@ properties:
     value:
       - id: account
         title: Account
-        icon: person
+        icon: person-outline
         __UIBAKERY__SYSTEM_ID__: '1'
       - id: support
         title: Support
-        icon: question-mark-circle
+        icon: question-mark-circle-outline
         __UIBAKERY__SYSTEM_ID__: '2'
       - id: log out
         title: Log out
