@@ -8,7 +8,7 @@ steps:
     params:
       - type: asyncCode
         value: |-
-          {{ui.map}}
+          {{ui.map.setData({ action: 'select', data })}}
           return {{data}};
         valueType: interpolatedValue
         interpolationType: code
