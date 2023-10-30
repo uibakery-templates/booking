@@ -2,38 +2,58 @@ id: '16373245688340.4979181156963426'
 name: loadBookings
 nameConfigured: true
 steps:
-  - id: '16373245810510.12912955665900716'
-    type: customSQLQuery
+  - id: '16986660312430.6034109158540752'
+    type: condition
+    name: condition
     params:
-      - type: query
-        value: "SELECT bookings.*, users.* FROM bookings \n\tJOIN users ON bookings.user_id = users.id \n\tWHERE bookings.apartment_id = {{ state.selectedApartment.id }};"
+      - type: code
+        value: '!!state.selectedApartment?.id '
         valueType: interpolatedValue
-        interpolationType: string
-      - type: datasourceId
-        value: upYkXTEnii
-        valueType: custom
-        mustSelectFirst: true
-      - type: preparedQuery
-        value: "SELECT bookings.*, users.* FROM bookings \n\tJOIN users ON bookings.user_id = users.id \n\tWHERE bookings.apartment_id = ?;"
-        valueType: interpolatedValue
-      - type: preparedQueryParams
+        interpolationType: code
+      - type: steps
         value:
-          - __UI_BAKERY__FORMAT_IF_DATE__( state.selectedApartment.id )
-        valueType: custom
-      - type: customDatabaseName
-        value: ''
-        valueType: interpolatedValue
-      - type: stepVersion
-        value: 2
-        valueType: custom
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: true
+          - condition: true
+            steps:
+              - id: '16373245810510.12912955665900716'
+                type: customSQLQuery
+                params:
+                  - type: query
+                    value: "SELECT bookings.*, users.* FROM bookings \n\tJOIN users ON bookings.user_id = users.id \n\tWHERE bookings.apartment_id = {{ state.selectedApartment.id }};"
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: datasourceId
+                    value: upYkXTEnii
+                    valueType: custom
+                    mustSelectFirst: true
+                  - type: preparedQuery
+                    value: "SELECT bookings.*, users.* FROM bookings \n\tJOIN users ON bookings.user_id = users.id \n\tWHERE bookings.apartment_id = ?;"
+                    valueType: interpolatedValue
+                  - type: preparedQueryParams
+                    value:
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(
+                        state.selectedApartment.id )
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: stepVersion
+                    value: 2
+                    valueType: custom
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: true
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
         valueType: custom
     level: 0
     fallthroughError: false
