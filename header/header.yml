@@ -21,5 +21,4 @@ children:
         name: content
         children:
           - components/horizontalMenu.yml
-          - components/image2.yml
           - components/contextMenuButton.yml
