@@ -41,10 +41,9 @@ slots:
     children:
       - image.yml
       - heading3.yml
-      - boolean.yml
-      - text.yml
       - text2.yml
       - text3.yml
+      - boolean2.yml
   - id: '16938342527290.33562652996861475'
     name: footer
     children: []
