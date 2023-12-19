@@ -7,7 +7,7 @@ styles:
       x: 0
       y: 0
       w: 10
-      h: 10
+      h: 9
 properties:
   name: heading
   text: Booking Backoffice

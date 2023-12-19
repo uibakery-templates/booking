@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 16
-      y: 13
+      y: 9
       w: 8
-      h: 215
+      h: 219
   xs:
     gridItem:
       x: 0

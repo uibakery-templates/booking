@@ -24,20 +24,7 @@ steps:
     name: code
     params:
       - type: asyncCode
-        value: >-
-          const apartments = {{actions.loadApartments.data}};
-
-          const index = apartments.findIndex(a => a.id ===
-          state.selectedApartment.id);
-
-
-          const elements = document.getElementsByClassName('apartment');
-
-          elements.item(index).scrollIntoView({ behavior: "smooth", block:
-          "nearest", inline: "nearest" });
-
-
-          return {{data}};
+        value: ./code.js
         valueType: interpolatedValue
         interpolationType: code
     level: 0
@@ -62,7 +49,7 @@ steps:
         value: false
         valueType: custom
       - type: customParams
-        value: '{{data}}'
+        value: ./16373303875240.5760185901206452-customParams.js
         valueType: interpolatedValue
     level: 0
     fallthroughError: false
@@ -82,4 +69,4 @@ config:
   preserveStateOnPageChange: true
 configured: true
 mode: manual
-index: 3
+kind: workflow

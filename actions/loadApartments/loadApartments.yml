@@ -6,12 +6,7 @@ steps:
     type: customSQLQuery
     params:
       - type: query
-        value: |-
-          SELECT * 
-          FROM appartments 
-          WHERE name LIKE CONCAT('%', '{{ui.input.value}}', '%') 
-          OR address LIKE CONCAT('%', '{{ui.input.value}}', '%') 
-          OR address2 LIKE CONCAT('%', '{{ui.input.value}}', '%')
+        value: ./query-query.sql
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
@@ -19,12 +14,7 @@ steps:
         valueType: string
         mustSelectFirst: true
       - type: preparedQuery
-        value: |-
-          SELECT * 
-          FROM appartments 
-          WHERE name LIKE CONCAT('%', '?', '%') 
-          OR address LIKE CONCAT('%', '?', '%') 
-          OR address2 LIKE CONCAT('%', '?', '%')
+        value: ./query-preparedQuery.sql
         valueType: interpolatedValue
       - type: preparedQueryParams
         value:
@@ -55,10 +45,7 @@ steps:
     type: customAsyncCode
     params:
       - type: asyncCode
-        value: |
-          {{actions.selectApartment.trigger(data[0])}}
-
-          return {{data}};
+        value: ./16373232772480.8904307297701004.js
         valueType: interpolatedValue
         interpolationType: code
     level: 0
@@ -78,4 +65,4 @@ config:
   runWhenFirstReferenced: true
 mode: manual
 configured: true
-index: 0
+kind: workflow
